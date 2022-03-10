@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-export class Confirm extends Component {
+export class FormPersonalDetails extends Component {
   continue = (e) => {
     e.preventDefault();
-    // PROCESS FORM //
     this.props.nextStep();
   };
 
@@ -13,9 +12,7 @@ export class Confirm extends Component {
   };
 
   render() {
-    const {
-      values: { firstName, lastName, email, occupation, city, bio },
-    } = this.props;
+    const { values, handleChange } = this.props;
     return (
       <main>
         <button className="back-btn" onClick={this.back}>
@@ -23,11 +20,11 @@ export class Confirm extends Component {
         </button>
 
         <button className="continue-btn" onClick={this.continue}>
-            Confirm & Continue
-          </button>
+          Continue
+        </button>
       </main>
     );
   }
 }
 
-export default Confirm;
+export default FormPersonalDetails;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FormUserDetails from "./FormUserDetails";
-import FormPersonalDetails from "./FormPersonalDetails";
+import FormPlantDetails from "./FormPlantDetails";
+import FormJournalDetails from "./FormJournalDetails";
 import Confirm from "./Confirm";
 import Success from "./Success";
 import Plantpage from "../../Plantpage";
@@ -8,9 +8,9 @@ import Plantpage from "../../Plantpage";
 export class Plantform extends Component {
   state = {
     step: 1,
-    firstName: "",
-    lastName: "",
-    email: "",
+    plantName: "",
+    commonName: "",
+    scientificName: "",
     occupation: "",
     city: "",
     bio: "",
@@ -39,13 +39,13 @@ export class Plantform extends Component {
 
   render() {
     const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, city, bio };
+    const { plantName, commonName, scientificName, lastWatered, city, bio } = this.state;
+    const values = { plantName, commonName, scientificName, lastWatered, city, bio };
 
     switch (step) {
       case 1:
         return (
-          <FormUserDetails
+          <FormPlantDetails
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
@@ -53,7 +53,7 @@ export class Plantform extends Component {
         );
       case 2:
         return (
-          <FormPersonalDetails
+          <FormJournalDetails
             nextStep={this.nextStep}
             prevStep={this.prevStep}
             handleChange={this.handleChange}

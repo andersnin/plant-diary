@@ -1,0 +1,92 @@
+button {
+  margin: 16px 0 8px 0;
+}.continue-btn {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #089630;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.continue-btn:hover {
+  background-color: #008000;
+  box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 0.35s;
+}
+
+.continue-btn:active {
+  transform: translateY(2px);
+  transition-duration: 0.35s;
+}
+
+.back-btn {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: #C76E4E;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(39, 174, 96, 0.15) 0 4px 9px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+      sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  
+  .back-btn:hover {
+    background-color: #91492f;
+    box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 0.35s;
+  }
+  
+  .back-btn:active {
+    transform: translateY(2px);
+    transition-duration: 0.35s;
+  }
+

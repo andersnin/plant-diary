@@ -75,3 +75,20 @@
       background-color: #ffd8b1;
   }
 }
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #C76E4E !important;
+}
+
+.MuiInputLabel-root {
+  color: #C76E4E !important;
+}
+
+.add-plant-form {
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 100%;
+  }
+}

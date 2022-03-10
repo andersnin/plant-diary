@@ -10,7 +10,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Footer = () => {
   const { isAuthenticated } = useAuth0();
   const { pathname } = useLocation();
-  console.log(pathname);
+  
   return (
     isAuthenticated && 
     <div className="footerContainer">
