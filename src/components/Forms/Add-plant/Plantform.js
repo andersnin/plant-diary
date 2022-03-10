@@ -11,9 +11,14 @@ export class Plantform extends Component {
     plantName: "",
     commonName: "",
     scientificName: "",
-    occupation: "",
-    city: "",
-    bio: "",
+    location: "",
+    img_url: "",
+    waterInterval: "",
+    mistInterval: "",
+    fertilizeInterval: "",
+    lastWatered: "",
+    lastMisted: "",
+    lastFertilized: "",
   };
 
   // Proceed to next step
@@ -39,8 +44,32 @@ export class Plantform extends Component {
 
   render() {
     const { step } = this.state;
-    const { plantName, commonName, scientificName, lastWatered, city, bio } = this.state;
-    const values = { plantName, commonName, scientificName, lastWatered, city, bio };
+    const {
+      plantName,
+      commonName,
+      scientificName,
+      location,
+      img_url,
+      waterInterval,
+      mistInterval,
+      fertilizeInterval,
+      lastWatered,
+      lastMisted,
+      lastFertilized,
+    } = this.state;
+    const values = {
+      plantName,
+      commonName,
+      scientificName,
+      location,
+      img_url,
+      waterInterval,
+      mistInterval,
+      fertilizeInterval,
+      lastWatered,
+      lastMisted,
+      lastFertilized,
+    };
 
     switch (step) {
       case 1:

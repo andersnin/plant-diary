@@ -85,10 +85,30 @@
 }
 
 .add-plant-form {
-  justify-content: center;
   align-items: center;
+  position: relative;
+
+  .plant-form-header {
+    display: flex;
+    width: 100%;
+  }
 
   button {
     width: 100%;
+  }
+
+  .MuiList-root {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    button {
+      width: 45%;
+    }
   }
 }

@@ -13,7 +13,7 @@ const Footer = () => {
   
   return (
     isAuthenticated && 
-    <div className="footerContainer">
+    <footer className="footerContainer">
       <Link to="/">
         <div>
           {pathname === "/" ? <AiFillHome /> : <AiOutlineHome />}
@@ -29,7 +29,7 @@ const Footer = () => {
         {pathname === "/journal" ? <RiBookletFill /> : <RiBookletLine />}
         </div>
       </Link>
-    </div>
+    </footer>
   )
 };
 
