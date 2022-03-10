@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { isLoading, isAuthenticated } = useAuth0();
+
+  if (isLoading) {
+    return <main className="loading-container">Loading...</main>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isAuthenticated ? (
+        <main></main>
+      ) : (
+        <main className="welcome">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0150/6262/products/the-sill_zz-plant_variant_medium_grant_terracotta_ace812df-95ef-495f-a32b-c4c12c57e915_768x.jpg?v=1645643525"
+            alt=""
+          />
+        </main>
+      )}
+    </>
   );
 }
 

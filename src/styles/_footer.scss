@@ -1,0 +1,20 @@
+.footerContainer {
+  display: flex;
+  height: 30px;
+  width: 100vw;
+  background-color: #C76E4E;
+  padding: 20px 0;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: space-evenly;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    color: #ffd8b1;
+  }
+
+  a {
+      padding: 8px;
+  }
+}

@@ -1,17 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import App from "./App";
+import { Auth0Provider } from "@auth0/auth0-react";
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// Components
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Plantpage from "./components/Plantpage";
+import Journal from "./components/Journal";
+import Plantform from "./components/Forms/Add-plant/Plantform";
+
+import onRedirecting from "./services/onRedirecting";
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+
+const rootElement = document.getElementById("root");
+render(
+  <Auth0Provider
+    domain={domain}
+    clientId={clientId}
+    onRedirecting={onRedirecting}
+    redirectUri={window.location.origin}
+  >
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="plants" element={<Plantpage />} />
+        <Route path="journal" element={<Journal />} />
+        <Route path="add-plant" element={<Plantform />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </Auth0Provider>,
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

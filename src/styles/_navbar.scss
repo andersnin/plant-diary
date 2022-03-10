@@ -1,0 +1,77 @@
+  @font-face {
+  font-family: 'Harb';
+  src: local('Harb'), url('./fonts/harb.ttf') format('woff');
+  }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+
+  .logo h1 {
+    font-family:'Harb';
+    font-size: 42px;
+    color: green;
+  }
+
+  .logo h1:active {
+    color: rgb(8, 110, 8);
+  }
+
+  .dropdown-menu {
+
+    .profile-img {
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: green;
+      border: 2px solid green;
+    }
+
+    .menu-items {
+      background-color: rgba(104, 104, 104, 0.205);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: 50vh;
+      width: 80vw;
+      white-space: nowrap;
+      padding: 16px;
+      animation: growDown 100ms ease-in-out forwards;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .menu-option {
+        padding: 12px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        color: green;
+        vertical-align: baseline;
+        p {
+          margin-left: 4px;
+          font-size: 26px;
+        }
+        svg {
+            height: 30px;
+            width: 30px;
+        }
+      }
+
+      .profile-name {
+        margin: 0;
+        font-weight: bold;
+        padding: 8px 0;
+      }
+    }
+  }
+}
