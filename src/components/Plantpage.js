@@ -1,8 +1,11 @@
 import React from "react";
 import { BsPlusCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { getPlantsByUserId } from "../services/apiServices";
+import GetUserInfo from "../services/GetUserInfo";
 
-const Plantpage = () => {
+const Plantpage = async () => {
+
   const plants = [
     {
       id: 1,
@@ -41,6 +44,9 @@ const Plantpage = () => {
         "https://www.gardeningknowhow.com/wp-content/uploads/2013/01/areca-palm-400x533.jpg",
     },
   ];
+
+  // const getPlants = getPlantsByUserId(token);
+  // console.log(getPlants);
 
   const renderedPlant = plants.map((plant) => {
     return (

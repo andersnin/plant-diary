@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import { List, ListItem, ListItemText } from "@mui/material/";
-import GetUserInfo from "../../../services/GetUserInfo";
-
+import { withAuth0 } from "@auth0/auth0-react";
+import { addPlant, apiTest } from "../../../services/apiServices";
 
 export class Confirm extends Component {
-  continue = (e) => {
+  continue = async (e) => {
+    const { getAccessTokenSilently } = this.props.auth0;
+    const token = await getAccessTokenSilently();
+    const plantDetails = this.props.values;
     e.preventDefault();
-    // PROCESS FORM //
-    console.log(this.props.values);
-    // const userInfo = GetUserInfo();
-    // console.log(userInfo);
 
+    // PROCESS FORM //
+    // console.log(this.props.values);
+    // console.log(token);
+
+    const userData = await addPlant(plantDetails, token);
     this.props.nextStep();
   };
 
@@ -38,7 +42,7 @@ export class Confirm extends Component {
     return (
       <main className="add-plant-form">
         <header className="plant-form-header">
-          <h1>Plant Details</h1>
+          <h1>Summary</h1>
         </header>
         <article>
           <List>
@@ -106,4 +110,4 @@ export class Confirm extends Component {
   }
 }
 
-export default Confirm;
+export default withAuth0(Confirm);
