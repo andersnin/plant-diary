@@ -5,6 +5,7 @@
 @import "./styles/typography";
 @import "./styles/plantview";
 @import "./styles/buttons";
+@import "./styles/single-plant-view";
 
 html,
 body {
@@ -33,6 +34,7 @@ main {
 }
 
 article {
+  min-height: 100%;
   max-width: 100%;
   width: 100%;
   margin: auto 0;

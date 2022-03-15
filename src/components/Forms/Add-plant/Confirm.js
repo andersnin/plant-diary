@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { List, ListItem, ListItemText } from "@mui/material/";
 import { withAuth0 } from "@auth0/auth0-react";
-import { addPlant, apiTest } from "../../../services/apiServices";
+import { addPlant } from "../../../services/apiServices";
 
 export class Confirm extends Component {
   continue = async (e) => {
@@ -11,10 +11,10 @@ export class Confirm extends Component {
     e.preventDefault();
 
     // PROCESS FORM //
-    // console.log(this.props.values);
-    // console.log(token);
 
-    const userData = await addPlant(plantDetails, token);
+    await addPlant(plantDetails, token);
+
+    // THEN REROUTE
     this.props.nextStep();
   };
 
@@ -31,12 +31,12 @@ export class Confirm extends Component {
         scientificName,
         location,
         img_url,
-        waterInterval,
-        mistInterval,
-        fertilizeInterval,
-        lastWatered,
-        lastMisted,
-        lastFertilized,
+        // waterInterval,
+        // mistInterval,
+        // fertilizeInterval,
+        // lastWatered,
+        // lastMisted,
+        // lastFertilized,
       },
     } = this.props;
     return (

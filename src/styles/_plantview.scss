@@ -1,12 +1,13 @@
 .masonry {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
+  flex-flow: wrap;
+  justify-content: space-between;
   width: 100%;
+
+  a {
+    width: fit-content;
+  }
 
   .masonry-brick {
     background-color: white;
@@ -16,7 +17,7 @@
     flex-direction: column;
     width: calc(50% - 12px);
     margin-top: 12px;
-    height: auto;
+    height: fit-content;
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
@@ -43,7 +44,7 @@
 
   .add-plant {
     width: calc(50% - 12px);
-    height: auto;
+    height: fit-content;
     background-color: #C76E4E;
     color: #ffd8b1;
     aspect-ratio: 1/1;
