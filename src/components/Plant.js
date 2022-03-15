@@ -3,6 +3,7 @@ import { useLocation } from "react-router"
 
 const Plant = () => {
     const location = useLocation()
+    console.log(location.state.plant);
     const { img_url } = location.state.plant
   return (
     <main>
